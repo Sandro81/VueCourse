@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>002</title>
+    <title>006</title>
 </head>
 <script src="vue.js"></script>
 <body>
 
 <div id="app">
+    <input type="text" v-on:input="changeTitle">
     <p>{{ title }}</p>
 </div>
 
@@ -17,6 +18,11 @@
         el: '#app',
         data: {
             title: 'Hello World!'
+        },
+        methods: {
+            changeTitle: function (event) {
+                this.title = event.target.value;
+            }
         }
     });
 
