@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>018</title>
+</head>
+<script src="vue.js"></script>
+<body>
+
+<div id="app">
+    <button v-on:clic="increase">Click me</button>
+    <h1 v-once>{{ title }}</h1>
+    <p>{{ counter }} </p>
+    <hr>
+    <p v-html="finishedLink"></p>
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+           counter: 0
+        },
+        methods: {
+            increase: function () {
+                this counter++;
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
