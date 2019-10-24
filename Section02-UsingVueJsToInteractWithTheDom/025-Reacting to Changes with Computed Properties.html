@@ -8,10 +8,11 @@
 <body>
 
 <div id="app">
-    <button v-on:click="increase">Increase me</button>
-    <button v-on:click="decrease">Increase me</button>
-    <p>{{ counter }} </p>
-    <p>{{ result }} </p>
+    <button v-on:click="counter++">Increase me</button>
+    <button v-on:click="counter--">Decrease me</button>
+    <button v-on:click="secondCounter++">Decrease me</button>
+    <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+    <p>Result: {{ result() }} | {{ output }}</p>
 </div>
 
 
@@ -20,20 +21,33 @@
         el: '#app',
         data: {
             counter: 0,
-            result: ''
+            secondCounter: 0
         },
-        /*
-        methods: {
-
-            increase: function () {
-                this.counter++;
-                this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
-            },
-            decrease: function () {
-                this.counter--;
-                this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+        computed: {
+            output: function () {
+                console.log('Computed');
+                return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
             }
-        }*/
+        },
+
+        methods: {
+            result: function () {
+                console.log('Method');
+                return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+            }
+
+            /*
+                       increase: function () {
+                           this.counter++;
+                           this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+                       },
+                       decrease: function () {
+                           this.counter--;
+                           this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+                       }
+                       */
+
+        }
     });
 
 </script>
