@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>026</title>
+</head>
+<script src="vue.js"></script>
+<body>
+
+<div id="app">
+    <button v-on:click="counter++">Increase me</button>
+    <button v-on:click="counter--">Decrease me</button>
+    <button v-on:click="secondCounter++">Increase me</button>
+    <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+    <p>Result: {{ result() }} | {{ output }}</p>
+    <p>setTimeoutCounter: {{ setTimeoutCounter }}</p>
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            secondCounter: 0,
+            setTimeoutCounter: 0
+        },
+        watch: {
+            counter: function (value) {
+                var vm = this;
+                setTimeout(function(){
+                    vm.counter = 0;
+                    vm.setTimeoutCounter++;
+                }, 2000)
+            }
+        },
+        computed: {
+            output: function () {
+                console.log('Computed');
+                return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+            }
+        },
+
+        methods: {
+            result: function () {
+                console.log('Method');
+                return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+            }
+
+            /*
+                       increase: function () {
+                           this.counter++;
+                           this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+                       },
+                       decrease: function () {
+                           this.counter--;
+                           this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+                       }
+                       */
+
+        }
+    });
+
+</script>
+
+</body>
+</html>
