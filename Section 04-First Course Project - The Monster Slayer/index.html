@@ -46,7 +46,8 @@
     <section class="row log" v-if="turns.length > 0">
         <div class="small-12 columns">
             <ul>
-                <li v-for="turn in turns">
+                <li v-for="turn in turns"
+                    :class="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}">
                     {{turn.text}}
                 </li>
             </ul>
@@ -74,8 +75,8 @@
                 var damage = this.calculateDamege(3, 10);
                 this.monsterHealth -= damage;
                 this.turns.unshift({
-                   isPlayer: true,
-                   text: 'Player hits Monster for ' +  damage
+                    isPlayer: true,
+                    text: 'Player hits Monster for ' +  damage
                 });
                 if (this.checkWin()) {
                     return;
