@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>030</title>
+</head>
+<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<style>
+  .demo{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .red{
+    background-color: red;
+  }
+  .green{
+    background-color: green;
+  }
+  .blue{
+    background-color: blue;
+  }
+  .yellow{
+    background-color: yellow;
+  }
+</style>
+<body>
+
+<div id="exercise">
+  <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+  <div>
+    <button @click="shrink = !shrink"  >Start Effect</button>
+    <div id="effect" :class="startEffect">{{ startEffect }}</div>
+  </div>
+  <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+  <div :style="[myStyle]">I got a new class :D</div>
+  <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+  <div>
+    <input type="text">
+    <div></div>
+  </div>
+  <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
+  <div>
+    <input type="text">
+    <input type="text">
+    <div></div>
+  </div>
+  <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
+  <div>
+    <input type="text">
+    <div></div>
+  </div>
+  <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+  <div>
+    <button>Start Progress</button>
+    <div></div>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#exercise',
+    data: {
+      shrink: false,
+      color: 'pink',
+      width: 100,
+      height: 80
+    },
+    watch: {
+      shrink: function (value) {
+        var vm = this;
+        setTimeout(function(){
+          vm.shrink = !vm.shrink;
+          //console.log('shrink = ' + vm.shrink);
+        }, 1000)
+      }
+    },
+    computed: {
+      startEffect: function () {
+        //console.log('shrink = ' + this.shrink);
+        return {
+          red: this.shrink,
+          yellow: !this.shrink,
+        }
+      },
+      myStyle: function () {
+        return {
+          backgroundColor: this.color,
+          width: this.width + 'px',
+          height: this.height + 'px'
+        }
+      }
+    },
+  });
+
+</script>
+
+</body>
+</html>
