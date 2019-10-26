@@ -26,6 +26,9 @@
   .yellow{
     background-color: yellow;
   }
+  .grey{
+    background-color: grey;
+  }
 </style>
 <body>
 
@@ -39,8 +42,8 @@
   <div :style="[myStyle]">I got a new class :D</div>
   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
   <div>
-    <input type="text">
-    <div></div>
+    <input type="text" v-model="colorEx3">
+    <div :style="[userStyle]"></div>
   </div>
   <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
   <div>
@@ -67,7 +70,8 @@
       shrink: false,
       color: 'pink',
       width: 100,
-      height: 80
+      height: 80,
+      colorEx3: 'grey'
     },
     watch: {
       shrink: function (value) {
@@ -92,8 +96,15 @@
           width: this.width + 'px',
           height: this.height + 'px'
         }
-      }
-    },
+      },
+      userStyle: function () {
+        return {
+          backgroundColor: this.colorEx3,
+          width: this.width + 60 + 'px',
+          height: this.height + -25 + 'px'
+        }
+      },
+    }
   });
 
 </script>
