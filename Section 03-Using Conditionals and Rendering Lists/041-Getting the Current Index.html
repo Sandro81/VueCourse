@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>040</title>
+    <title>041</title>
 </head>
 <script src="vue.js"></script>
 <body>
 
 <div id="app">
     <ul>
-        <li v-for="ingredient in ingredients">{{ingredient}}</li>
+        <li v-for="(ingredient, i) in ingredients">{{ingredient}} ({{ i }}</li>
     </ul>
 </div>
 
