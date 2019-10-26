@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>032</title>
+</head>
+<script src="vue.js"></script>
+<style>
+    .demo{
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        display: inline-block;
+        margin: 10px;
+    }
+
+    .red{
+        background-color: red;
+    }
+    .green{
+        background-color: green;
+    }
+    .blue{
+        background-color: blue;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+</style>
+<body>
+
+<div id="app">
+    <p>You can see me!</p>
+    <p>Do you also see me?</p>
+</div>
+
+
+
+<script>
+    // Put this in the script section in JSFiddle
+    // In a local setup, you need to merge this and the index.html file into one file
+    new Vue({
+        el: '#app',
+        data: {
+            show: true
+        }
+    })
+
+</script>
+
+</body>
+</html>
