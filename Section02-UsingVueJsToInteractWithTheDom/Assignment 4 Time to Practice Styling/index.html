@@ -108,9 +108,17 @@
       classEx4: 'demo',
       statusEx4: true,
       colorEx5: 'rgb(0, 191, 255)',
+      progessBar: false,
     },
     watch: {
       shrink: function (value) {
+        var vm = this;
+        setTimeout(function(){
+          vm.shrink = !vm.shrink;
+          //console.log('shrink = ' + vm.shrink);
+        }, 1000)
+      },
+      progessBar: function (value) {
         var vm = this;
         setTimeout(function(){
           vm.shrink = !vm.shrink;
@@ -131,13 +139,6 @@
           backgroundColor: this.color,
           width: this.width + 'px',
           height: this.height + 'px'
-        }
-      },
-      userStyle: function () {
-        return {
-          backgroundColor: this.colorEx3,
-          width: this.width + 60 + 'px',
-          height: this.height + -25 + 'px'
         }
       },
     }
