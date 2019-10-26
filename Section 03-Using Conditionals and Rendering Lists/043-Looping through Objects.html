@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>041</title>
+    <title>043</title>
 </head>
 <script src="vue.js"></script>
 <body>
@@ -11,6 +11,11 @@
     <ul>
         <li v-for="(ingredient, i) in ingredients">({{ i }}) {{ingredient}} </li>
     </ul>
+    <template v-for="(ingredient, index) in ingredients">
+        <h1>{{ingredient}}</h1>
+        <p>{{index}}</p>
+    </template>
+
 </div>
 
 
