@@ -74,6 +74,12 @@
 
   <div>
     <p>4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes</p>
+    <ul>
+      <li>There are 3 classes </li>
+      <li>demo </li>
+      <li>demo2 </li>
+      <li>demo3 </li>
+    </ul>
     <input type="text" v-model="classEx4"><br>
     <label for="classRed">Activate Red Background</label>
     <input type="checkbox" v-model="statusEx4" id="classRed"> <br>
@@ -130,7 +136,7 @@
         var vm = this;
         setTimeout(function(){
 
-          if (vm.progressBarValue <= 100) {
+          if (vm.progressBarValue <= 99) {
             vm.progessBar = !vm.progessBar;
             vm.progressBarValue++;
             vm.message = vm.progressBarValue + '% Loading...';
