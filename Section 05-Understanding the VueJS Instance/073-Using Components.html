@@ -21,6 +21,10 @@
 </div>
 
 <div id="app3"></div>
+<hello></hello>
+<hello></hello>
+<hello></hello>
+<hello></hello>
 
 <script>
   var data = {
@@ -78,12 +82,13 @@
   });
 
   var vm3 = new Vue({
+    el: 'hello',
     template: '<h1>Hello!</h1>'
   });
 
  // vm3.$mount('#app3');
-  vm3.$mount();
-  document.getElementById('app3').appendChild(vm3.$el);
+  /*vm3.$mount();
+  document.getElementById('app3').appendChild(vm3.$el);*/
 
 </script>
 
