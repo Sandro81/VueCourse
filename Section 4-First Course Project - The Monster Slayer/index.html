@@ -14,7 +14,7 @@
             <div class="healthbar">
                 <div class="healthbar text-center"
                      style="background-color: green; margin: 0; color: white;"
-                :style="{width: playerHealth + '%'}">
+                     :style="{width: playerHealth + '%'}">
                     {{playerHealth}}
                 </div>
             </div>
@@ -30,17 +30,17 @@
             </div>
         </div>
     </section>
-    <section class="row controls" v-if="!gameIsRunning">
+    <section class="row controls" v-if="!gamesIsRunning">
         <div class="small-12 columns">
-            <button id="start-game">START NEW GAME</button>
+            <button id="start-game" @click="startGame">START NEW GAME</button>
         </div>
     </section>
     <section class="row controls" v-else>
         <div class="small-12 columns">
-            <button id="attack">ATTACK</button>
-            <button id="special-attack">SPECIAL ATTACK</button>
-            <button id="heal">HEAL</button>
-            <button id="give-up">GIVE UP</button>
+            <button id="attack" @click="attack">ATTACK</button>
+            <button id="special-attack" @click="specialAttack">SPECIAL ATTACK</button>
+            <button id="heal" @click="heal">HEAL</button>
+            <button id="give-up" @click="giveUp">GIVE UP</button>
         </div>
     </section>
     <section class="row log">
@@ -60,7 +60,65 @@
         data: {
             playerHealth: 100,
             monsterHealth: 100,
-            gamesIsRunning: false
+            gamesIsRunning: false,
+        },
+        methods: {
+            startGame: function () {
+                this.gamesIsRunning = true;
+                this.playerHealth = 100;
+                this.monsterHealth = 100;
+            },
+            attack: function () {
+                this.monsterHealth -= this.calculateDamege(3, 10);
+                if (this.checkWin()) {
+                    return;
+                }
+                this.monsterAttacks();
+            },
+            specialAttack: function () {
+                this.monsterHealth -= this.calculateDamege(10, 20);
+                if (this.checkWin()) {
+                    return;
+                }
+                this.monsterAttacks();
+            },
+            heal: function () {
+                if (this.playerHealth <=90) {
+                    this.playerHealth += 10;
+                } else {
+                    this.playerHealth += 10;
+                }
+
+                this.monsterAttacks();
+            },
+            giveUp: function () {
+
+            },
+            calculateDamege: function (min, max) {
+                return Math.max(Math.floor(Math.random() * max) + 1, min);
+            },
+            monsterAttacks: function() {
+                this.playerHealth -= this.calculateDamege(5, 12);
+                this.checkWin();
+            },
+            checkWin: function () {
+                if(this.monsterHealth <= 0) {
+                    if(confirm('You won! NewGame?')) {
+                        this.startGame();
+                    } else {
+                        this.gamesIsRunning = false;
+                    }
+                    return true;
+                } else if (this.playerHealth <= 0) {
+                    if(confirm('You lost! NewGame?')) {
+                        this.startGame();
+                    } else {
+                        this.gamesIsRunning = false;
+                    }
+                    return true;
+                }
+                return false;
+            }
         }
     })
 
