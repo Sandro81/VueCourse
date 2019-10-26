@@ -9,9 +9,16 @@
   .demo{
     width: 100px;
     height: 100px;
-    background-color: gray;
+    background-color: grey;
     display: inline-block;
     margin: 10px;
+  }
+  .demo2{
+    width: 200px;
+    height: 50px;
+    background-color: yellow;
+    display: inline-block;
+    margin: 50px;
   }
 
   .red{
@@ -33,24 +40,30 @@
 <body>
 
 <div id="exercise">
-  <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
+
   <div>
-    <button @click="shrink = !shrink"  >Start Effect</button>
+    <p>1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below)</p>
+    <button @click="shrink = !shrink">Start Effect</button>
     <div id="effect" :class="startEffect">{{ startEffect }}</div>
   </div>
-  <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
+  <hr>
+  <p>2) Create a couple of CSS classes and attach them via the array syntax</p>
   <div :style="[myStyle]">I got a new class :D</div>
-  <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+  <hr>
   <div>
+    <p>3) Let the user enter a class (create some example classes) and attach it</p>
     <input type="text" v-model="colorEx3">
     <div :style="[userStyle]"></div>
   </div>
-  <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
+  <hr>
+
   <div>
-    <input type="text">
-    <input type="text">
-    <div></div>
+    <p>4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes</p>
+    <input type="text" v-model="classEx4">
+    <input type="text" v-model="statusEx4"> <br>
+    <div :class="classEx4"></div>
   </div>
+  <hr>
   <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
   <div>
     <input type="text">
@@ -71,7 +84,9 @@
       color: 'pink',
       width: 100,
       height: 80,
-      colorEx3: 'grey'
+      colorEx3: 'grey',
+      classEx4: 'demo',
+      statusEx4: true,
     },
     watch: {
       shrink: function (value) {
