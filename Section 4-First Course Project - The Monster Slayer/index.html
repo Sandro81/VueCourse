@@ -61,6 +61,7 @@
             playerHealth: 100,
             monsterHealth: 100,
             gamesIsRunning: false,
+            turns: []
         },
         methods: {
             startGame: function () {
@@ -69,7 +70,12 @@
                 this.monsterHealth = 100;
             },
             attack: function () {
-                this.monsterHealth -= this.calculateDamege(3, 10);
+                var damage = this.calculateDamege(3, 10);
+                this.monsterHealth -= damage;
+                this.turns.unshift({
+                   isPlayer: true,
+                   text: 'Player hits Monster for ' +  damage
+                });
                 if (this.checkWin()) {
                     return;
                 }
@@ -92,13 +98,18 @@
                 this.monsterAttacks();
             },
             giveUp: function () {
-
+                this.gamesIsRunning = false;
             },
             calculateDamege: function (min, max) {
                 return Math.max(Math.floor(Math.random() * max) + 1, min);
             },
             monsterAttacks: function() {
-                this.playerHealth -= this.calculateDamege(5, 12);
+                var damage = this.calculateDamege(5, 12);
+                this.playerHealth -= damage;
+                this.turns.unshift({
+                    isPlayer: false,
+                    text: 'Monster hits Player for ' +  damage
+                });
                 this.checkWin();
             },
             checkWin: function () {
