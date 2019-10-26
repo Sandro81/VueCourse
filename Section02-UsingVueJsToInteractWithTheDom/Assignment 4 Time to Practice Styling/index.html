@@ -89,10 +89,16 @@
   <hr>
   <div>
     <p>6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button.</p>
-    <button>Start Progress</button>
-    <div class="progress">
-      <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 1%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    <button @click="progessBar = !progessBar">Start Progress</button>
+    <div class="progress" >
+      <div class="progress-bar progress-bar-striped bg-info" role="progressbar" :style="{width: progressBarValue + '%'}" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      <p>{{message}}</p>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
   </div>
 </div>
 
@@ -109,6 +115,8 @@
       statusEx4: true,
       colorEx5: 'rgb(0, 191, 255)',
       progessBar: false,
+      progressBarValue: '0',
+      message: ''
     },
     watch: {
       shrink: function (value) {
@@ -121,9 +129,18 @@
       progessBar: function (value) {
         var vm = this;
         setTimeout(function(){
-          vm.shrink = !vm.shrink;
-          //console.log('shrink = ' + vm.shrink);
-        }, 1000)
+
+          if (vm.progressBarValue <= 100) {
+            vm.progessBar = !vm.progessBar;
+            vm.progressBarValue++;
+            vm.message = vm.progressBarValue + '% Loading...';
+          } else {
+            vm.progressBarValue = 0;
+            vm.message = vm.progressBarValue + '%';
+          }
+
+          console.log('progressBarValue = ' + vm.progressBarValue);
+        }, 100)
       }
     },
     computed: {
