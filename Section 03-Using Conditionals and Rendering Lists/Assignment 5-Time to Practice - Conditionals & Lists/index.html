@@ -26,14 +26,21 @@
     </ul>
     <hr>
     <p>3) Print all key-value pairs of the following object: {title: 'Lord of the Rings', author: 'J.R.R. Tolkiens', books: '3'}. Also print the index of each item.</p>
-    <ul>
-      <li></li>
-    </ul>
+        <div v-for="(value, key, index) in myObject">{{index}}) <b>{{key}}</b>: {{value}}</div>
+
     <hr>
     <p>4) Print the following object (only the values) and also create a nested loop for the array: {name: 'TESTOBJECT', data: [1.67, 1.33, 0.98, 2.21]} (hint: use v-for and v-if to achieve this)</p>
     <ul>
-      <li>
-
+      <li v-for="(value) in testData">
+        <template v-if="Array.isArray(value)">
+          Data
+          <ul>
+            <li v-for="element in value">{{element}}</li>
+          </ul>
+        </template>
+        <template v-else>
+          {{ value }}
+        </template>
       </li>
     </ul>
   </div>
@@ -46,7 +53,6 @@
       array: ['Max', 'Anna', 'Chris', 'Manu'],
       fellowships : ['Gandalf', 'Frodo', 'Sam', 'Aragorn', 'Legolas', 'Gimli', 'Pippin', 'Merry', 'Boromir', ],
       myObject: {
-
         title: 'Lord of the Rings',
         author: 'J.R.R. Tolkiens',
         books: '3'
