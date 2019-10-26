@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>030</title>
+  <title>Assignment 4</title>
 </head>
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <style>
   .demo{
     width: 100px;
@@ -19,6 +21,13 @@
     background-color: yellow;
     display: inline-block;
     margin: 50px;
+  }
+  .demo3{
+    width: 300px;
+    height: 20px;
+    background-color: greenyellow;
+    display: inline-block;
+    margin: 2px;
   }
 
   .red{
@@ -52,27 +61,38 @@
   <hr>
   <div>
     <p>3) Let the user enter a class (create some example classes) and attach it</p>
-    <input type="text" v-model="colorEx3">
-    <div :style="[userStyle]"></div>
+    <ul>
+      <li>There are 3 classes </li>
+      <li>demo </li>
+      <li>demo2 </li>
+      <li>demo3 </li>
+    </ul>
+    <input type="text" v-model="colorEx3"><br>
+    <div :class="[colorEx3]"></div>
   </div>
   <hr>
 
   <div>
     <p>4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes</p>
-    <input type="text" v-model="classEx4">
-    <input type="text" v-model="statusEx4"> <br>
-    <div :class="classEx4"></div>
+    <input type="text" v-model="classEx4"><br>
+    <label for="classRed">Activate Red Background</label>
+    <input type="checkbox" v-model="statusEx4" id="classRed"> <br>
+    <div :class="[classEx4, {red: statusEx4}]"></div>
   </div>
   <hr>
-  <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
   <div>
-    <input type="text">
+    <p> 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  </p>
+    <input type="text" v-model="colorEx5"><br>
+    <div :style="{backgroundColor: colorEx5}" class="demo"></div>
     <div></div>
   </div>
-  <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
+  <hr>
   <div>
+    <p>6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button.</p>
     <button>Start Progress</button>
-    <div></div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 1%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
   </div>
 </div>
 
@@ -84,9 +104,10 @@
       color: 'pink',
       width: 100,
       height: 80,
-      colorEx3: 'grey',
+      colorEx3: 'demo',
       classEx4: 'demo',
       statusEx4: true,
+      colorEx5: 'rgb(0, 191, 255)',
     },
     watch: {
       shrink: function (value) {
@@ -124,5 +145,10 @@
 
 </script>
 
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
