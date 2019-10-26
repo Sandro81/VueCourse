@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>043</title>
+    <title>045</title>
 </head>
 <script src="vue.js"></script>
 <body>
 
 <div id="app">
     <ul>
-        <li v-for="(ingredient, i) in ingredients">({{ i }}) {{ingredient}} </li>
+        <li v-for="(ingredient, i) in ingredients" :key="ingredient">({{ i }}) {{ingredient}} </li>
     </ul>
-
+<button @click="ingredients.push('spieces')">Add New</button>
     <ul>
         <li v-for="person in persons">
 
