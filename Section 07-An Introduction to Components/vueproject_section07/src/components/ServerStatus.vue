@@ -8,7 +8,6 @@
 
 <script>
     export default {
-        name: "ServerStatus",
         data: function () {
             return {
                 status: 'Critical'
@@ -21,7 +20,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
