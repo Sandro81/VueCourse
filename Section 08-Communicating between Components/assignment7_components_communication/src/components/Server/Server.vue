@@ -13,7 +13,7 @@
         props: ['server'],
         methods: {
             serverSelected() {
-                serverBus.$emit('serverSelected', this.id);
+                serverBus.$emit('serverSelected', this.server);
             }
         }
     }
