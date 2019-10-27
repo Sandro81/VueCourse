@@ -1,13 +1,21 @@
 <template>
     <li class="list-group-item"
-    style="cursor: pointer">
-        Server #{{ id }}
+    style="cursor: pointer"
+    @click="serverSelected">
+        Server #{{ server.id }}
     </li>
 </template>
 
 <script>
+    import { serverBus } from "@/main";
+
     export default {
-        props: ['id']
+        props: ['server'],
+        methods: {
+            serverSelected() {
+                serverBus.$emit('serverSelected', this.id);
+            }
+        }
     }
 </script>
 
