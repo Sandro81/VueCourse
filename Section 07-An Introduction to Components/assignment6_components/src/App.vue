@@ -34,6 +34,19 @@
 </template>
 
 <script>
+  import Header from "@/components/Header";
+  import Footer from "@/components/Footer";
+  import Servers from "@/components/Servers";
+  import ServerDetails from "@/components/ServerDetails";
+
+  export default {
+    components: {
+      'app-header': Header,
+      'app-servers': Servers,
+      'app-server-details': ServerDetails,
+      'app-footer': Footer
+    }
+  }
 </script>
 
 <style>
