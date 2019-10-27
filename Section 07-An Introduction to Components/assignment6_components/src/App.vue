@@ -14,10 +14,10 @@
 </template>
 
 <script>
-  import Header from "@/components/Header";
-  import Footer from "@/components/Footer";
-  import Servers from "@/components/Servers";
-  import ServerDetails from "@/components/ServerDetails";
+  import Header from "@/components/Shared/Header";
+  import Footer from "@/components/Shared/Footer";
+  import Servers from "@/components/Server/Servers";
+  import ServerDetails from "@/components/Server/ServerDetails";
 
   export default {
     components: {
