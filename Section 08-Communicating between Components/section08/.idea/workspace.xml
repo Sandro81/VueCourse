@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8dbaef1a-65d6-4bc7-b62c-db6c7c601d37" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../assignment7_components_communication/src/components/Server/Server.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../assignment7_components_communication/src/components/Server/Server.vue" afterDir="false" />
+    <list default="true" id="8dbaef1a-65d6-4bc7-b62c-db6c7c601d37" name="Default Changelist" comment="Section 08">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +80,7 @@
       <workItem from="1572179645866" duration="3000" />
       <workItem from="1572179810838" duration="14000" />
       <workItem from="1572180688662" duration="799000" />
+      <workItem from="1572193449373" duration="736000" />
     </task>
     <task id="LOCAL-00001" summary="Section 08">
       <created>1572177670077</created>
