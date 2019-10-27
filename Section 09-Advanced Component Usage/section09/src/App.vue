@@ -6,10 +6,17 @@
         <button @click="selectedComponent = 'appAuthor'">Author</button>
         <button @click="selectedComponent = 'appNew'">New</button>
         <hr>
-        <app-quote>
-          <h1 slot="title">{{quoteTitle}}</h1>
-          <p slot="content">A Wonderful Quote</p>
-        </app-quote>
+        <p>{{ selectedComponent}}</p>
+        <keep-alive>
+          <component :is="selectedComponent">
+            <p>Default Content</p>
+          </component>
+        </keep-alive>
+
+        <!--   <app-quote>
+             <h1 slot="title">{{quoteTitle}}</h1>
+             <p slot="content">A Wonderful Quote</p>
+           </app-quote>-->
       </div>
     </div>
   </div>
@@ -20,12 +27,12 @@
   import Author from "@/components/Author";
   import New from "@/components/New";
   export default {
-      data: function () {
-        return{
-          quoteTitle: 'The Quote',
-          selectedComponent: 'appQuote'
-        }
-      },
+    data: function () {
+      return{
+        quoteTitle: 'The Quote',
+        selectedComponent: 'appQuote'
+      }
+    },
     components: {
       appQuote: Quote,
       appAuthor: Author,
