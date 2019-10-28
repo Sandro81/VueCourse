@@ -1,9 +1,7 @@
 <template>
     <div class="row">
-
             <app-quote  v-for="quote in quotes" v-bind:key="quote.id" :quote="quote"></app-quote>
         </div>
-
 </template>
 
 <script>
