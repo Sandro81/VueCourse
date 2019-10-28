@@ -1,9 +1,9 @@
 <template>
     <div class="row">
-        <div class="col-sm" v-for="quote in quotes" v-bind:key="quote.id">
-            <app-quote  :quote="quote"></app-quote>
+
+            <app-quote  v-for="quote in quotes" v-bind:key="quote.id" :quote="quote"></app-quote>
         </div>
-    </div>
+
 </template>
 
 <script>
