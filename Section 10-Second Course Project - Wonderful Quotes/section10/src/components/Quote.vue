@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="col-sm">
     </div>
 </template>
 
