@@ -1,14 +1,12 @@
 <template>
-    <div class="col-sm">
         <div class="panel panel-default">
-            <div class="panel-body quote"></div>
+            <div class="panel-body">{{ quote }}ssss</div>
         </div>
-    </div>
 </template>
 
 <script>
     export default {
-        props: ['quotes']
+        props: ['quote']
     }
 </script>
 
