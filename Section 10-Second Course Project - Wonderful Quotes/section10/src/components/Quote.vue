@@ -1,5 +1,8 @@
 <template>
     <div class="col-sm">
+        <div class="panel panel-default">
+            <div class="panel-body quote"></div>
+        </div>
     </div>
 </template>
 
