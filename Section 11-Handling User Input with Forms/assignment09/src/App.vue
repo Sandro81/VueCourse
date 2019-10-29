@@ -14,6 +14,7 @@
                         <!-- Edit the Example from above and create a custom "Full Name" Control -->
                         <!-- which still holds the First Name and Last Name Input Field -->
 
+                        <app-full-name v-model="fullName"></app-full-name>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email"
@@ -68,7 +69,7 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Full Name: {{firstName}} {{lastName}}</p>
+                        <p>Full Name: {{fullName}}</p>
                         <p>Mail: {{email}}</p>
                         <p>Password: {{password}}</p>
                         <p>Store in Database?: {{storeData}}</p>
@@ -80,16 +81,20 @@
 </template>
 
 <script>
+    import FullName from "@/components/FullName";
+
     export default {
         data() {
             return {
-                firstName: '',
-                lastName: '',
+                fullName: 'Sandro Fioravanti',
                 email: '',
                 password: '',
                 storeData: 'Yes',
                 submitted: false
             }
+        },
+        components: {
+            appFullName: FullName
         }
     }
 </script>
