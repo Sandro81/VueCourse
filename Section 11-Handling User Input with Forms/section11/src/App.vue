@@ -11,7 +11,8 @@
                     type="text"
                     id="email"
                     class="form-control"
-                    v-model.trim="userData.email">
+
+                    :value="userData.email">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -70,13 +71,15 @@
             <input
                     type="radio"
                     id="male"
-                    value="Male"> Male
+                    value="Male"
+                    v-model="gender"> Male
           </label>
           <label for="female">
             <input
                     type="radio"
                     id="female"
-                    value="Female"> Female
+                    value="Female"
+                    v-model="gender"> Female
           </label>
         </div>
       </div>
@@ -85,8 +88,11 @@
           <label for="priority">Priority</label>
           <select
                   id="priority"
-                  class="form-control">
-            <option></option>
+                  class="form-control"
+                  v-model="selectedPriority">
+            <option
+                    v-for="priority in priorities"
+                    v-bind:key="priority.id">{{priority}}</option>
           </select>
         </div>
       </div>
@@ -115,8 +121,8 @@
             <ul>
               <li v-for="item of sendMail" v-bind:key="item.id"> {{item}}</li>
             </ul>
-            <p>Gender:</p>
-            <p>Priority:</p>
+            <p>Gender: {{gender}}</p>
+            <p>Priority: {{selectedPriority}}</p>
             <p>Switched:</p>
           </div>
         </div>
@@ -135,7 +141,10 @@
           age: 38,
         },
         message: 'A short one',
-        sendMail: []
+        sendMail: [],
+        gender: 'Male',
+        selectedPriority: 'Low',
+        priorities: ['High', 'Medium', 'Low']
 
       }
     }
