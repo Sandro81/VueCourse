@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f965ec4a-950d-44ec-9048-b34e577a57a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Start/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Start/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Start/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Start/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Start/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Start/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Start/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Start/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/src/components/HelloWorld.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/assignment10/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Section Code (Start)/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Section Code (Start)/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Section Code (Start)/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Section Code (Start)/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Section Code (Start)/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Section Code (Start)/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Section Code (Start)/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Section 12-Using and Creating Directives/Section Code (Start)/webpack.config.js" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1SwUjGTEgQzfTwPKJjeRl65BM2e" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vueproject_section07" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f965ec4a-950d-44ec-9048-b34e577a57a0" name="Default Changelist" comment="" />
+      <created>1572474284147</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572474284147</updated>
+      <workItem from="1572474285307" duration="10000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
