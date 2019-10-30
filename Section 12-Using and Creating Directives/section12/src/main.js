@@ -17,6 +17,32 @@ Vue.directive('highlightWithBinding', {
   }
 });
 
+Vue.directive('highlightWithBindingWithArg', {
+  bind(el, binding) {
+    if(binding.arg == 'background') {
+      el.style.backgroundColor = binding.value;
+    } else {
+      el.style.color = binding.value;
+    }
+  }
+});
+
+Vue.directive('highlightWithBindingWithArgAndModifier', {
+  bind(el, binding) {
+    var delay = 0;
+    if(binding.modifiers['delayed']){
+      delay = 3000;
+      setTimeout(() => {
+        if(binding.arg == 'background') {
+          el.style.backgroundColor = binding.value;
+        } else {
+          el.style.color = binding.value;
+        }
+      }, delay);
+    }
+  }
+});
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')
