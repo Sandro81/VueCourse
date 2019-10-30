@@ -16,6 +16,8 @@
         <p v-highlightWithBindingWithArg="'red'">Color this with Binding and Arg</p>
         <h3>Modifiers</h3>
         <p v-highlightWithBindingWithArgAndModifier:background.delayed="'deepskyblue'">Color this with Binding and Arg and Modifiers</p>
+      <h3>Local Directives</h3>
+        <p v-local-highlight:background.delayed="'purple'">Color this with Binding and Arg and Modifiers</p>
       </div>
     </div>
   </div>
@@ -23,6 +25,23 @@
 
 <script>
   export default {
+    directives: {
+      'local-highlight': {
+        bind(el, binding) {
+          var delay = 0;
+          if(binding.modifiers['delayed']){
+            delay = 2000;
+            setTimeout(() => {
+              if(binding.arg == 'background') {
+                el.style.backgroundColor = binding.value;
+              } else {
+                el.style.color = binding.value;
+              }
+            }, delay);
+          }
+        }
+      }
+    }
   }
 </script>
 
