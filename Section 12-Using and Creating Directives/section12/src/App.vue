@@ -19,7 +19,9 @@
         <h3>Local Directives</h3>
         <p v-local-highlight:background.delayed="'purple'">Color this with Binding and Arg and Modifiers</p>
         <h3>Multiple Modifiers</h3>
-        <p v-local-highlightBlink:background.delayed.blink="'yellow'">Color this with Binding and Arg and Modifiers</p>
+        <p v-local-highlightBlink:background.delayed.blink="'yellow'">Color this with Binding and Arg and Multiple Modifiers</p>
+        <h3>Passing more Complex Values to Directives</h3>
+        <p v-local-highlightBlinkWithComplexValues:background.delayed.blink="{mainColor: 'red', secondColor: 'green', delay: 200}">Color this with Binding and Arg and Modifiers Passing more Complex Values to Directives</p>
       </div>
     </div>
   </div>
@@ -69,7 +71,35 @@
                 }
               }, delay);
             }
-
+          }
+        }
+      },
+      'local-highlightBlinkWithComplexValues': {
+        bind(el, binding) {
+          var delay = 0;
+          if(binding.modifiers['delayed']){
+            delay = 2500;
+            if(binding.modifiers['blink']) {
+              let mainColor = binding.value.mainColor;
+              let secondColor = binding.value.secondColor;
+              let currentColor = mainColor;
+              setInterval(() => {
+                currentColor == secondColor ? currentColor = mainColor : currentColor = secondColor;
+                if(binding.arg == 'background') {
+                  el.style.backgroundColor = currentColor;
+                } else {
+                  el.style.color = currentColor;
+                }
+              }, binding.value.delay);
+            } else {
+              setTimeout(() => {
+                if(binding.arg == 'background') {
+                  el.style.backgroundColor = binding.value.mainColor;
+                } else {
+                  el.style.color = binding.value.mainColor;
+                }
+              }, delay);
+            }
           }
         }
       }
