@@ -9,8 +9,8 @@ Vue.filter('to-lowerCaseGloballyFilter', function (value) {
 Vue.mixin({
   created() {
     /*eslint no-console: "error"*/
-// custom console
-    Console.log('Global Mixin - Created Hook');
+    // custom console
+    console.log('Global Mixin - Created Hook');
   }
 });
 new Vue({
