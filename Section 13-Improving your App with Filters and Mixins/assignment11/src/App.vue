@@ -12,8 +12,8 @@
         <p>{{secondText | calculateLength}}</p>
         <!-- Exercise 3 -->
         <!-- Do the same as in Exercises 1 & 2, now with Computed Properties -->
-        <p>{{firstText | reverse }}</p>
-        <p>{{secondText | calculateLength}}</p>
+        <p>{{reversed }}</p>
+        <p>{{lengthAware}}</p>
         <!-- Exercise 4 -->
         <!-- Share the Computed Property rebuilding Exercise 2 via a Mixin -->
       </div>
@@ -22,7 +22,10 @@
 </template>
 
 <script>
+  import {lengthAwareMixin} from "@/lengthAware";
+
   export default {
+    mixins: [lengthAwareMixin],
     data() {
       return {
         firstText: 'Some Text',
@@ -39,9 +42,7 @@
         return this.firstText.split("").reverse().join("");
       }
     },
-    calculateLength() {
-      return this.secondText + ' (' + this.secondText.length + ') ';
-    }
+
   }
 </script>
 
