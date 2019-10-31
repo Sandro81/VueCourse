@@ -6,6 +6,7 @@
         <p>{{ text | toUpperCaseFilter}}</p>
         <p>{{ text | to-lowerCaseGloballyFilter}}</p>
         <hr>
+        <button @click="fruits.push('Berries')">Add New Item</button>
         <input type="text" v-model="filterText">
         <ul>
           <li v-for="fruit in filteredFruits" v-bind:key="fruit.id">{{fruit}}</li>
