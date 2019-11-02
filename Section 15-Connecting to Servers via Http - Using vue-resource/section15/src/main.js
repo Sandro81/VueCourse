@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource';
+import response from "vue-resource/src/http/response";
 
 
 Vue.config.productionTip = false
@@ -12,7 +13,9 @@ Vue.http.interceptors.push((request, next) => {
   if(request.method == 'POST') {
     request.method = 'PUT';
   }
-  next();
+  next(response => {
+
+  });
 });
 new Vue({
   render: h => h(App),
