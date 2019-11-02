@@ -6,7 +6,7 @@
                     <h1>The User Page</h1>
                 </div>
                 <div class="w-100"></div>
-                <div class="col">col</div>
+                <div class="col"><button @click="navigateToHome">Go to Home</button></div>
                 <div class="col">col</div>
             </div>
         </div>
@@ -15,7 +15,12 @@
 
 <script>
     export default {
-        name: "User"
+        name: "User",
+        methods: {
+            navigateToHome() {
+                this.$router.push({path: '/'});
+            }
+        }
     }
 </script>
 
