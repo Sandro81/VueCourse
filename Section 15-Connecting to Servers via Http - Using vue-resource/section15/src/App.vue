@@ -28,8 +28,14 @@
           <button type="submit" class="btn btn-primary" @click="submit">Submit</button>
         </div>
         <div class="w-100"></div>
-        <div class="col">col</div>
-        <div class="col">col</div>
+        <div class="col"><button type="button" class="btn btn-dark" @click="fetchData">Get Data</button></div>
+        <div class="col">
+          <ul class="list-group">
+            <li class="list-group" v-for="(u, index) in users" :key="index">
+              {{u.username}} - {{u.email}}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <hr>
@@ -53,7 +59,8 @@
         user: {
           username: '',
           email: ''
-        }
+        },
+        users: []
       }
     },
     name: 'app',
@@ -61,11 +68,24 @@
     },
     methods: {
       submit() {
-        this.$http.post('https://vuehttptest-f8e41.firebaseio.com/data.json', this.user)
+        this.$http.post('', this.user)
                 .then(response => {
                   console.log(response)
                 }, error => {
                   console.log(error)
+                });
+      },
+      fetchData() {
+        this.$http.get('')
+                .then(response => {
+                 return response.json();
+                })
+                .then(data => {
+                  const resultArray = [];
+                  for (let key in data) {
+                    resultArray.push(data[key]);
+                  }
+                  this.users = resultArray;
                 });
       }
     }
