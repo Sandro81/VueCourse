@@ -7,6 +7,7 @@
         <p id="data">Some extra Data</p>
         <div style="height: 700px"></div>
         <p id="data2">Some extra Data2</p>
+        <div style="height: 700px"></div>
     </div>
 </template>
 
