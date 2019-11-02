@@ -16,8 +16,9 @@
     <hr>
     <div class="container">
       <div class="row">
-        <div class="col">col</div>
-        <div class="col">col</div>
+        <div class="col">
+          <router-view></router-view>
+        </div>
         <div class="w-100"></div>
         <div class="col">col</div>
         <div class="col">col</div>
@@ -27,12 +28,10 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
   }
 }
 </script>
