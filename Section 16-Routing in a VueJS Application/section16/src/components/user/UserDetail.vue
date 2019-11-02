@@ -7,14 +7,27 @@
         <!--                :to="'/user/' + $route.params.id + '/edit'">Edit</router-link>-->
         <router-link
                 tag="button"
-                :to="{name: 'userEdit', params: {id: $route.params.id},
-                query: {locale: 'en', q: 100}}">Edit</router-link>
+                :to="{link}
+">Edit</router-link>
     </div>
 </template>
 
 <script>
     export default {
         name: "UserDetail",
+        data() {
+            return {
+                link: {
+                    name: 'userEdit',
+                    params: {
+                        id: $route.params.id
+                    },
+                    query: {
+                        locale: 'en', q: 100
+                    }
+                }
+            }
+        }
 
     }
 </script>
