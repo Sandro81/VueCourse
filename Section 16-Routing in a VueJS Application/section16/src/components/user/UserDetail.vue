@@ -7,8 +7,7 @@
         <!--                :to="'/user/' + $route.params.id + '/edit'">Edit</router-link>-->
         <router-link
                 tag="button"
-                :to="{link}
-">Edit</router-link>
+                :to="link">Edit</router-link>
     </div>
 </template>
 
@@ -20,11 +19,12 @@
                 link: {
                     name: 'userEdit',
                     params: {
-                        id: $route.params.id
+                        id: this.$route.params.id
                     },
                     query: {
                         locale: 'en', q: 100
-                    }
+                    },
+                    hash: '#data'
                 }
             }
         }
