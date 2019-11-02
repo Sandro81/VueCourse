@@ -25,8 +25,24 @@
                         locale: 'en', q: 100
                     },
                     hash: '#data'
-                }
+                },
+                isLogin: false,
+
             }
+        },
+        methods: {
+
+        },
+        beforeRouteEnter(to, from, next) {
+            console.log('beforeRouteEnter');
+            //is good to check if a user is logged or can has access to certain page
+            if(true) {
+                next();
+            } else {
+                next(false);
+            }
+
+
         }
 
     }
