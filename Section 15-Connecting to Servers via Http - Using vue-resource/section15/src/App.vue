@@ -7,6 +7,7 @@
         </div>
         <div class="w-100"></div>
         <div class="col">
+          <h1>Section 15: Connecting to Servers via Http - Using vue-resource</h1>
           <p>https://github.com/pagekit/vue-resource</p>
           <p> npm install --save vue-resource</p>
         </div>
