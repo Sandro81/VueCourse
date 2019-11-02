@@ -5,27 +5,44 @@
         <hr>
         <button class="btn btn-primary" @click="show = !show, showAppear = !showAppear">Show Alert</button>
         <br><br>
-        <transition name="fade">
+        <select name="" id="" v-model="alertAnimation" class="form-control">
+            <option value="fade">Fade</option>
+            <option value="slide">Slide</option>
+        </select>
+        <br>
+        <transition :name="alertAnimation" >
             <div class="alert alert-primary" role="alert" v-if="show">
-                A simple primary alert—check it out!
+                v-if="show"using the :name=""
             </div>
         </transition>
+        <br>
         <transition name="slide" type="animation">
             <div class="alert alert-danger" role="alert" v-if="show">
                 A simple danger alert—check it out!
             </div>
         </transition>
+        <br>
         <transition name="slide" type="animation" appear>
             <div class="alert alert-danger" role="alert" v-if="showAppear">
                 Animation with appear
             </div>
         </transition>
+        <br>
         <transition
                 enter-active-class="animated bounce"
                 leave-active-class="animated shake"
                 appear>
             <div class="alert alert-info" role="alert" v-if="showAppear">
                 Animation with appear from Animate.css
+            </div>
+        </transition>
+        <br>
+        <transition :name="alertAnimation" >
+            <div class="alert alert-primary" role="alert" v-if="show" key="info">
+                Switching between two different elements key="info"
+            </div>
+            <div class="alert alert-danger" role="alert" v-else key="warning">
+                A simple danger alert—check it out! key="warning"
             </div>
         </transition>
     </div>
@@ -36,7 +53,8 @@
         data() {
             return {
                 show: false,
-                showAppear: true
+                showAppear: true,
+                alertAnimation: 'fade'
             }
         }
     }
