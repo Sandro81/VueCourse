@@ -11,6 +11,7 @@
             </div>
             <div class="row">
                 <div class="col">
+                    <h6>200. Using Dynamic Names and Attributes</h6>
                     <select name="" id="" v-model="alertAnimation" class="form-control">
                         <option value="fade">Fade</option>
                         <option value="slide">Slide</option>
@@ -27,7 +28,7 @@
                 <div class="col">
                     <transition name="slide" type="animation">
                         <div class="alert alert-danger" role="alert" v-if="show">
-                            A simple danger alert—check it out!
+                            Mixing Transition and Animation Properties
                         </div>
                     </transition>
                 </div>
@@ -50,23 +51,24 @@
                     </transition>
                 </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <transition :name="alertAnimation" mode="out-in">
+                        <div class="alert alert-primary" role="alert" v-if="show" key="info">
+                            202. Transitioning between Multiple Elements (Practice) key="info"
+                        </div>
+                        <div class="alert alert-danger" role="alert" v-else key="warning">
+                            202. Transitioning between Multiple Elements (Practice) key="warning"
+                        </div>
+                    </transition>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">col</div>
+                <div class="col">col</div>
+            </div>
         </div>
 
-        <br>
 
-        <br>
-
-        <br>
-
-        <br>
-        <transition :name="alertAnimation" mode="out-in">
-            <div class="alert alert-primary" role="alert" v-if="show" key="info">
-                Switching between two different elements key="info"
-            </div>
-            <div class="alert alert-danger" role="alert" v-else key="warning">
-                A simple danger alert—check it out! key="warning"
-            </div>
-        </transition>
     </div>
 </template>
 
@@ -84,7 +86,8 @@
 
 <style>
     .col {
-        min-height: 60px;
+        min-height: 70px;
+
     }
     .fade-enter {
         opacity: 0;
