@@ -6,7 +6,7 @@
                     <h1>The User Page</h1>
                 </div>
                 <div class="w-100"></div>
-                <div class="col"><button @click="navigateToHome">Go to Home</button></div>
+                <div class="col"><button @click="navigateToHome" class="btn btn-primary">Go to Home</button></div>
                 <div class="col">col</div>
             </div>
         </div>
