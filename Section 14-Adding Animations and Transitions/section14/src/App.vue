@@ -74,16 +74,16 @@
                 <div class="w-100"></div>
                 <div class="col">
                     <transition
-                    @before-enter="beforeEnter"
-                    @enter="enter"
-                    @after-enter="afterEnter"
-                    @enter-cancelled="enterCancelled"
+                            @before-enter="beforeEnter"
+                            @enter="enter"
+                            @after-enter="afterEnter"
+                            @enter-cancelled="enterCancelled"
 
-                    @before-leave="beforeLeave"
-                    @leave="leave"
-                    @after-leave="afterLeave"
-                    @leave-cancelled="leaveCancelled"
-                    :css="false">
+                            @before-leave="beforeLeave"
+                            @leave="leave"
+                            @after-leave="afterLeave"
+                            @leave-cancelled="leaveCancelled"
+                            :css="false">
                         <div
                                 style="width: 300px; height: 100px; background-color: lightgreen"
                                 v-if="load"></div>
@@ -91,19 +91,22 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">207. Animating Dynamic Components</div>
-            <div class="w-100"></div>
-            <div class="col">
-                <button type="button" class="btn btn-info"
-                @click="selectedComponent == 'app-success-alert' ? selectedComponent = 'app-danger-alert' : selectedComponent = 'app-success-alert'">Toggle Components</button>
-            </div>
-            <div class="w-100"></div>
-            <div class="col">
-                <component :is="selectedComponent"></component>
+        <div class="container">
+            <div class="row">
+                <div class="col">207. Animating Dynamic Components</div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <button type="button" class="btn btn-info"
+                            @click="selectedComponent == 'app-success-alert' ? selectedComponent = 'app-danger-alert' : selectedComponent = 'app-success-alert'">Toggle Components</button>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <transition name="fade" mode="out-in">
+                        <component :is="selectedComponent"></component>
+                    </transition>
+                </div>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -119,7 +122,7 @@
                 alertAnimation: 'fade',
                 load: true,
                 elementWidth: 100,
-                selectedComponent: 'appSuccessAlert'
+                selectedComponent: 'app-success-alert'
             }
         },
         methods: {
