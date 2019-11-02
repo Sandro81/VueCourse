@@ -82,14 +82,26 @@
                     @before-leave="beforeLeave"
                     @leave="leave"
                     @after-leave="afterLeave"
-                    @leave-cancelled="leaveCancelled">
-                        <div style="width: 100px; height: 100px; background-color: lightgreen" v-if="load"></div>
+                    @leave-cancelled="leaveCancelled"
+                    :css="false">
+                        <div
+                                style="width: 300px; height: 100px; background-color: lightgreen"
+                                v-if="load"></div>
                     </transition>
                 </div>
-                <div class="col">col</div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col">207. Animating Dynamic Components</div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                </div>
+            </div>
+            <div class="col">col</div>
+        </div>
+    </div>
 
     </div>
 </template>
@@ -102,15 +114,26 @@
                 showAppear: true,
                 alertAnimation: 'fade',
                 load: true,
+                elementWidth: 100
             }
         },
         methods: {
             beforeEnter(el) {
                 console.log(el  + 'beforeEnter');
+                this.element = 100;
+                el.style.width = this.elementWidth + 'px';
             },
             enter(el, done) {
                 console.log('enter');
-                done();
+                let round = 1;
+                const interval = setInterval(()=>{
+                    el.style.width = (this.elementWidth + round * 10)+ 'px';
+                    round++;
+                    if(round > 20) {
+                        clearInterval(interval);
+                        done();
+                    }
+                }, 20)
             },
             afterEnter(el) {
                 console.log(el  +'afterEnter');
@@ -120,12 +143,26 @@
             },
             beforeLeave(el) {
                 console.log(el  +'beforeLeave');
+                this.element = 300;
+                el.style.width = this.elementWidth + 'px';
             },
             leave(el, done) {
                 console.log(el  +'leave');
+                let round = 1;
+                const interval = setInterval(()=>{
+                    el.style.width = (this.elementWidth - round * 10)+ 'px';
+                    round++;
+                    if(round > 20) {
+                        clearInterval(interval);
+                        done();
+                    }
+                }, 20)
             },
             afterLeave(el) {
                 console.log(el  +'afterLeave');
+            },
+            leaveCancelled(el) {
+                console.log(el  +'leaveCancelled');
             }
         }
     }
