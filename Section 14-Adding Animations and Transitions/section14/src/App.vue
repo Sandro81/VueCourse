@@ -103,6 +103,11 @@
                 alertAnimation: 'fade',
                 load: true,
             }
+        },
+        methods: {
+            beforeEnter(el) {
+
+            }
         }
     }
 </script>
