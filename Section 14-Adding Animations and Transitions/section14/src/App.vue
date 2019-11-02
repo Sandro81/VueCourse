@@ -112,7 +112,21 @@
                 console.log('enter');
                 done();
             },
-
+            afterEnter(el) {
+                console.log(el  +'afterEnter');
+            },
+            enterCancelled(el) {
+                console.log(el  +'enterCancelled');
+            },
+            beforeLeave(el) {
+                console.log(el  +'beforeLeave');
+            },
+            leave(el, done) {
+                console.log(el  +'leave');
+            },
+            afterLeave(el) {
+                console.log(el  +'afterLeave');
+            }
         }
     }
 </script>
