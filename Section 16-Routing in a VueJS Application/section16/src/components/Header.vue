@@ -4,8 +4,17 @@
                 <img alt="Vue logo" src="../assets/logo.png" width="30" height="30" class="d-inline-block align-top" >
                 Vue.js
             </a>
-            <router-link class=" nav-item nav-link" to="/">Home <span class="sr-only">(current)</span></router-link>
-            <router-link class=" nav-item nav-link" to="/user">User</router-link>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <router-link class="nav-link active" to="/">Home</router-link>
+                </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/user">User</router-link>
+                </li>
+            </ul>
+
+
+
 
 
         </nav>
