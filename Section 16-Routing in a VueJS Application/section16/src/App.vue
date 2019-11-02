@@ -4,27 +4,27 @@
     <div class="container">
       <div class="row">
         <div class="col">
-
+          <h4>Section 16: Routing in a VueJS Application</h4>
+          <p>npm install --save vue-router</p>
+          <hr>
         </div>
         <div class="w-100"></div>
-        <div class="col">
-          <h1>Section 16: Routing in a VueJS Application</h1>
-          <p>npm install --save vue-router</p>
-        </div>
-      </div>
-    </div>
-
-    <hr>
-    <div class="container">
-      <div class="row">
         <div class="col">
           <router-view></router-view>
         </div>
-        <div class="w-100"></div>
-        <div class="col">col</div>
-        <div class="col">col</div>
       </div>
     </div>
+
+<!--    <hr>-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col">col</div>-->
+<!--        <div class="col">col</div>-->
+<!--        <div class="w-100"></div>-->
+<!--        <div class="col">col</div>-->
+<!--        <div class="col">col</div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
