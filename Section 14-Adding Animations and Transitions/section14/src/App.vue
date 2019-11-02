@@ -62,8 +62,30 @@
                         </div>
                     </transition>
                 </div>
+
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">204. Understanding JavaScript Animations</div>
                 <div class="w-100"></div>
-                <div class="col">col</div>
+                <div class="col">
+                    <button type="button" class="btn btn-dark" @click="load =!load">Load / Remove Element</button>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <transition
+                    @before-enter="beforeEnter"
+                    @enter="enter"
+                    @after-enter="afterEnter"
+                    @enter-cancelled="enterCancelled"
+
+                    @before-leave="beforeLeave"
+                    @leave="leave"
+                    @after-leave="afterLeave"
+                    @leave-cancelled="leaveCancelled">
+                        <div style="width: 100px; height: 100px; background-color: lightgreen" v-if="load"></div>
+                    </transition>
+                </div>
                 <div class="col">col</div>
             </div>
         </div>
@@ -78,7 +100,8 @@
             return {
                 show: false,
                 showAppear: true,
-                alertAnimation: 'fade'
+                alertAnimation: 'fade',
+                load: true,
             }
         }
     }
