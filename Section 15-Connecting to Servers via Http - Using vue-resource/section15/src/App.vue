@@ -25,7 +25,7 @@
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="user.email">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" @click="submit">Submit</button>
         </div>
         <div class="w-100"></div>
         <div class="col">col</div>
@@ -61,7 +61,12 @@
     },
     methods: {
       submit() {
-        console.log(this.user);
+        this.$http.post('https://vuehttptest-f8e41.firebaseio.com/data.json', this.user)
+                .then(response => {
+                  console.log(response)
+                }, error => {
+                  console.log(error)
+                });
       }
     }
   }
