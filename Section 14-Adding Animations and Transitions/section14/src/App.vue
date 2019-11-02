@@ -1,43 +1,65 @@
 {<template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png">
-        <h1>Animations</h1>
-        <hr>
-        <button class="btn btn-primary" @click="show = !show, showAppear = !showAppear">Show Alert</button>
-        <br><br>
-        <select name="" id="" v-model="alertAnimation" class="form-control">
-            <option value="fade">Fade</option>
-            <option value="slide">Slide</option>
-        </select>
-        <br>
-        <transition :name="alertAnimation" >
-            <div class="alert alert-primary" role="alert" v-if="show">
-                v-if="show"using the :name=""
+        <img alt="Vue logo" src="./assets/logo.png" style="width: 50px; height: auto;">
+        <div class="container">
+            <div class="row">
+                <div class="col"><h1>Animations</h1></div>
             </div>
-        </transition>
-        <br>
-        <transition name="slide" type="animation">
-            <div class="alert alert-danger" role="alert" v-if="show">
-                A simple danger alert—check it out!
+            <div class="row">
+                <div class="col"><button class="btn btn-primary" @click="show = !show, showAppear = !showAppear">Show Alert</button>
+                </div>
             </div>
-        </transition>
-        <br>
-        <transition name="slide" type="animation" appear>
-            <div class="alert alert-danger" role="alert" v-if="showAppear">
-                Animation with appear
+            <div class="row">
+                <div class="col">
+                    <select name="" id="" v-model="alertAnimation" class="form-control">
+                        <option value="fade">Fade</option>
+                        <option value="slide">Slide</option>
+                    </select>
+                </div>
             </div>
-        </transition>
-        <br>
-        <transition
-                enter-active-class="animated bounce"
-                leave-active-class="animated shake"
-                appear>
-            <div class="alert alert-info" role="alert" v-if="showAppear">
-                Animation with appear from Animate.css
+            <div class="row">
+                <div class="col">  <transition :name="alertAnimation" >
+                    <div class="alert alert-primary" role="alert" v-if="show">
+                        v-if="show"using the :name=""
+                    </div>
+                </transition>
+                </div>
+                <div class="col">
+                    <transition name="slide" type="animation">
+                        <div class="alert alert-danger" role="alert" v-if="show">
+                            A simple danger alert—check it out!
+                        </div>
+                    </transition>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <transition name="slide" type="animation" appear>
+                        <div class="alert alert-danger" role="alert" v-if="showAppear">
+                            Animation with appear
+                        </div>
+                    </transition>
+                </div>
+                <div class="col">
+                    <transition
+                            enter-active-class="animated bounce"
+                            leave-active-class="animated shake"
+                            appear>
+                        <div class="alert alert-info" role="alert" v-if="showAppear">
+                            Animation with appear from Animate.css
+                        </div>
+                    </transition>
+                </div>
             </div>
-        </transition>
+        </div>
+
         <br>
-        <transition :name="alertAnimation" >
+
+        <br>
+
+        <br>
+
+        <br>
+        <transition :name="alertAnimation" mode="out-in">
             <div class="alert alert-primary" role="alert" v-if="show" key="info">
                 Switching between two different elements key="info"
             </div>
@@ -61,6 +83,9 @@
 </script>
 
 <style>
+    .col {
+        min-height: 60px;
+    }
     .fade-enter {
         opacity: 0;
     }
