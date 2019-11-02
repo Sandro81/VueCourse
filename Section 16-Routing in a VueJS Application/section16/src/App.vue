@@ -10,7 +10,7 @@
         </div>
         <div class="w-100"></div>
         <div class="col">
-          <transition name="slide">
+          <transition name="slide" mode="out-in">
             <router-view></router-view>
           </transition>
 
