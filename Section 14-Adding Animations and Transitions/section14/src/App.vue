@@ -111,8 +111,21 @@
             <div class="row">
                 <div class="col">209. Using <b>transition-group</b> - Preparations</div>
                 <div class="w-100"></div>
-                <div class="col">col</div>
-                <div class="col">col</div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" @click="addItem">Add Item</button>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                    <ul class="list-group">
+                        <transition-group name="slide">
+                            <li class="list-group-item"
+                                v-for="(number, index) in numbers"
+                                v-bind:key="index"
+                                @click="removeItem(index)"
+                                style="cursor: pointer">{{number}}</li>
+                        </transition-group>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -133,10 +146,18 @@
                 alertAnimation: 'fade',
                 load: true,
                 elementWidth: 100,
-                selectedComponent: 'app-success-alert'
+                selectedComponent: 'app-success-alert',
+                numbers: ['1 Cras justo odio', '2 Dapibus ac facilisis in', '3 Morbi leo risus', '4 Porta ac consectetur ac', '5 Vestibulum at eros']
             }
         },
         methods: {
+            addItem() {
+                const pos = Math.floor(Math.random() * this.numbers.length);
+                this.numbers.splice(pos, 0, this.numbers.length + 1 );
+            },
+            removeItem(index) {
+                this.numbers.splice(index, 1);
+            },
             beforeEnter(el) {
                 console.log(el  + 'beforeEnter');
                 this.element = 100;
