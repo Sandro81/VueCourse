@@ -14,7 +14,24 @@
       </div>
     </div>
 
-
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="Username">Username</label>
+            <input type="text" class="form-control" id="Username" placeholder="Enter your Username" v-model="user.username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" v-model="user.email">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+      </div>
+    </div>
     <hr>
 
     <div class="container">
@@ -31,8 +48,21 @@
 
 <script>
   export default {
+    data() {
+      return {
+        user: {
+          username: '',
+          email: ''
+        }
+      }
+    },
     name: 'app',
     components: {
+    },
+    methods: {
+      submit() {
+        console.log(this.user);
+      }
     }
   }
 </script>
