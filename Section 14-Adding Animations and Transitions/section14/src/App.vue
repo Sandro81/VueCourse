@@ -106,8 +106,13 @@
         },
         methods: {
             beforeEnter(el) {
+                console.log(el  + 'beforeEnter');
+            },
+            enter(el, done) {
+                console.log('enter');
+                done();
+            },
 
-            }
         }
     }
 </script>
