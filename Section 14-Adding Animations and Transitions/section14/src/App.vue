@@ -120,9 +120,9 @@
                         <transition-group name="slide">
                             <li class="list-group-item"
                                 v-for="(number, index) in numbers"
-                                v-bind:key="index"
+                                :key="number"
                                 @click="removeItem(index)"
-                                style="cursor: pointer">{{number}}</li>
+                                style="cursor: pointer">{{index}} {{number}}</li>
                         </transition-group>
                     </ul>
                 </div>
@@ -147,7 +147,7 @@
                 load: true,
                 elementWidth: 100,
                 selectedComponent: 'app-success-alert',
-                numbers: ['1 Cras justo odio', '2 Dapibus ac facilisis in', '3 Morbi leo risus', '4 Porta ac consectetur ac', '5 Vestibulum at eros']
+                numbers: ['Cras justo odio', 'Dapibus ac facilisis in', 'Morbi leo risus', 'Porta ac consectetur ac', 'Vestibulum at eros', 'Cras justo odio','Cras justo odio','Cras justo odio',]
             }
         },
         methods: {
@@ -252,6 +252,12 @@
         animation: slide-out 1s ease-out forwards;
         transition: opacity 1s;
         opacity: 0;
+        position: absolute;
+    }
+
+
+    .slide-move {
+        transition: transform 1s;
     }
 
     @keyframes slide-in {
@@ -271,6 +277,8 @@
             transform: translateY(20px);
         }
     }
+
+
 
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
