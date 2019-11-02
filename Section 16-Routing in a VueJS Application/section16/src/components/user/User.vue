@@ -7,7 +7,6 @@
                 </div>
                 <div class="w-100"></div>
                 <div class="col">
-                    <p>Loaded ID: {{id}}</p>
                     <button @click="navigateToHome" class="btn btn-primary">
                         Go to Home
                     </button>
@@ -20,17 +19,6 @@
 
 <script>
     export default {
-        data() {
-            return {
-                id: this.$route.params.id
-            }
-        },
-        watch: {
-            '$route'(to, from) {
-              this.id = to.params.id;
-            }
-        },
-        name: "User",
         methods: {
             navigateToHome() {
                 this.$router.push({path: '/'});
