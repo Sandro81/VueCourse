@@ -10,8 +10,9 @@
                     <button @click="navigateToHome" class="btn btn-primary">
                         Go to Home
                     </button>
+                    <hr>
+                    <router-view></router-view>
                 </div>
-                <div class="col">col</div>
             </div>
         </div>
     </div>
