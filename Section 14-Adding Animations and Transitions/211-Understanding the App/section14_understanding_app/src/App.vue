@@ -11,7 +11,8 @@
                 <transition name="flip" mode="out-in">
                     <component
                             :is="mode" @answered="answered($event)"
-                            @confirmed="mode = 'app-question'"></component>
+                            @confirmed="mode = 'app-question'"
+                            @confirmedWrongAnswer="mode = 'app-question'"></component>
                 </transition>
             </div>
         </div>
@@ -21,6 +22,7 @@
 <script>
     import Question from './components/Question.vue';
     import Answer from './components/Answer.vue';
+    import WrongAnswer from "@/components/WrongAnswer";
 
     export default {
         data() {
@@ -33,14 +35,15 @@
                 if (isCorrect) {
                     this.mode = 'app-answer';
                 } else {
-                    this.mode = 'app-question';
-                    alert('Wrong, try again!');
+                    this.mode = 'app-wrong-answer';
+                    //alert('Wrong, try again!');
                 }
             }
         },
         components: {
             appQuestion: Question,
-            appAnswer: Answer
+            appAnswer: Answer,
+            appWrongAnswer: WrongAnswer
         }
     }
 </script>
