@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <app-header></app-header>
+    <router-view name="header-top"></router-view>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -25,7 +25,9 @@
 <!--        <div class="col">col</div>-->
 <!--      </div>-->
 <!--    </div>-->
+    <router-view name="header-bottom"></router-view>
   </div>
+
 </template>
 
 <script>
