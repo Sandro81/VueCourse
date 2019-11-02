@@ -1,9 +1,10 @@
 <template>
   <div id="app">
+    <app-header></app-header>
     <div class="container">
       <div class="row">
         <div class="col">
-          <img alt="Vue logo" src="./assets/logo.png" style="width: 50px; height: auto;">
+
         </div>
         <div class="w-100"></div>
         <div class="col">
@@ -29,9 +30,12 @@
 
 <script>
 
+import Header from "@/components/Header";
+
 export default {
   name: 'app',
   components: {
+    appHeader: Header
   }
 }
 </script>
@@ -43,6 +47,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
