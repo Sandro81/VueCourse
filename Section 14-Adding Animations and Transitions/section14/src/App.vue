@@ -95,18 +95,22 @@
             <div class="col">207. Animating Dynamic Components</div>
             <div class="w-100"></div>
             <div class="col">
-                <div class="alert alert-danger" role="alert">
-                    A simple danger alert—check it out!
-                </div>
+                <button type="button" class="btn btn-info"
+                @click="selectedComponent == 'app-success-alert' ? selectedComponent = 'app-danger-alert' : selectedComponent = 'app-success-alert'">Toggle Components</button>
             </div>
-            <div class="col">col</div>
+            <div class="w-100"></div>
+            <div class="col">
+                <component :is="selectedComponent"></component>
+            </div>
         </div>
-    </div>
 
     </div>
 </template>
 
 <script>
+    import DangerAlert from "@/components/DangerAlert";
+    import SuccessAlert from "@/components/SuccessAlert";
+
     export default {
         data() {
             return {
@@ -114,7 +118,8 @@
                 showAppear: true,
                 alertAnimation: 'fade',
                 load: true,
-                elementWidth: 100
+                elementWidth: 100,
+                selectedComponent: 'appSuccessAlert'
             }
         },
         methods: {
@@ -164,6 +169,10 @@
             leaveCancelled(el) {
                 console.log(el  +'leaveCancelled');
             }
+        },
+        components: {
+            appDangerAlert: DangerAlert,
+            appSuccessAlert: SuccessAlert
         }
     }
 </script>
