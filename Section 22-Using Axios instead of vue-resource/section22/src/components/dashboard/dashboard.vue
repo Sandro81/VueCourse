@@ -9,7 +9,9 @@
   import axios from 'axios';
   export default {
     created() {
-      axios.get()
+      axios.get('https://vuecourse-bbdb1.firebaseio.com/users.json')
+              .then(res => console.log(res))
+              .catch(error => console.log(error));
     }
   }
 </script>
