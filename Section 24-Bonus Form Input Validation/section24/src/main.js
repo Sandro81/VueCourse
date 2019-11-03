@@ -3,6 +3,9 @@ import router from './router';
 import store from './store';
 import App from "@/App";
 import axios from 'axios';
+import Vuelidate from "vuelidate/src";
+
+Vue.use(Vuelidate);
 
 axios.defaults.baseURL = 'https://vuecourse-bbdb1.firebaseio.com';
 axios.defaults.headers.common['Authorization'] = 'asd token';
