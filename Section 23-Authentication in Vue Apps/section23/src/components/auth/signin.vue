@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import axios from '../../axios-auth';
+
   export default {
     data () {
       return {
@@ -39,15 +39,9 @@
           email: this.email,
           password: this.password,
         }
-        //https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
+
         console.log(formData);
-        axios.post('/accounts:signInWithPassword?key=AIzaSyAfayTtsI9es-kaTj9OSD3B_BnBVa4HVv8', {
-          email: formData.email,
-          password: formData.password,
-          returnSecureToken: true
-        })
-                .then(res => console.log(res))
-                .catch(error => console.log(error));
+        this.$store.dispatch('login', {email: formData.email, password: formData.password})
       }
     }
   }
