@@ -26,11 +26,15 @@ export default new Vuex.Store({
       state.idToken = null;
       state.userId = null;
       state.user = null;
-
      router.replace('/signin');
     }
   },
   actions: {
+    setLogoutTimer({commit}, expirationTime){
+      setTimeout( () => {
+        commit('clearAuthData')
+      }, expirationTime);
+    },
     signup({commit, dispatch}, authData) {
       //https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
       console.log('$store signup',authData);
@@ -47,11 +51,12 @@ export default new Vuex.Store({
               user: res.data.user
             })
             dispatch('storeUser', authData);
+            dispatch('setLogoutTimer', res.data.expiresIn);
             router.replace('/signin');
           })
           .catch(error => console.log(error));
     },
-      login({commit}, authData) {
+      login({commit, dispatch}, authData) {
       //https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
       console.log('$store login',authData);
       axios.post('/accounts:signInWithPassword?key=AIzaSyAfayTtsI9es-kaTj9OSD3B_BnBVa4HVv8', {
@@ -66,8 +71,10 @@ export default new Vuex.Store({
               userId: res.data.userId,
               user: res.data.user
             })
+            dispatch('setLogoutTimer', res.data.expiresIn);
           })
           .catch(error => console.log(error));
+
     },
     logout({commit}) {
       commit('clearAuthData');
