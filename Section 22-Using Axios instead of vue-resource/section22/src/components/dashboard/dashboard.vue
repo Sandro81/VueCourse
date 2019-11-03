@@ -5,6 +5,15 @@
   </div>
 </template>
 
+<script>
+  import axios from 'axios';
+  export default {
+    created() {
+      axios.get()
+    }
+  }
+</script>
+
 <style scoped>
   h1, p {
     text-align: center;
