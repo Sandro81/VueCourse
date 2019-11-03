@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from './axios-auth';
 import globalAxios from 'axios';
+import router from "@/router";
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -14,9 +16,18 @@ export default new Vuex.Store({
     authUser (state, userData) {
       state.idToken = userData.token;
       state.userId = userData.userId;
+      router.replace('/dashboard');
     },
     storeUser(state, user) {
       state.user = user;
+    },
+    clearAuthData(state) {
+      console.log('clearAuthData',state);
+      state.idToken = null;
+      state.userId = null;
+      state.user = null;
+
+     router.replace('/signin');
     }
   },
   actions: {
@@ -32,13 +43,15 @@ export default new Vuex.Store({
             console.log(res);
             commit('authUser', {
               token: res.data.idToken,
-              userId: res.data.localId
+              userId: res.data.userId,
+              user: res.data.user
             })
-            dispatch('storeUser', authData)
+            dispatch('storeUser', authData);
+            router.replace('/signin');
           })
           .catch(error => console.log(error));
     },
-    login({commit}, authData) {
+      login({commit}, authData) {
       //https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
       console.log('$store login',authData);
       axios.post('/accounts:signInWithPassword?key=AIzaSyAfayTtsI9es-kaTj9OSD3B_BnBVa4HVv8', {
@@ -50,10 +63,14 @@ export default new Vuex.Store({
             console.log(res);
             commit('authUser', {
               token: res.data.idToken,
-              userId: res.data.localId
+              userId: res.data.userId,
+              user: res.data.user
             })
           })
           .catch(error => console.log(error));
+    },
+    logout({commit}) {
+      commit('clearAuthData');
     },
     storeUser({commit, state}, userData) {
       if(!state.idToken) {
@@ -88,6 +105,9 @@ export default new Vuex.Store({
   getters: {
     user (state) {
       return state.user;
+    },
+    isAuthenticated(state){
+      return state.idToken !== null;
     }
   }
 })
