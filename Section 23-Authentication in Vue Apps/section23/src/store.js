@@ -33,7 +33,7 @@ export default new Vuex.Store({
     setLogoutTimer({commit}, expirationTime){
       setTimeout( () => {
         commit('clearAuthData')
-      }, expirationTime);
+      }, expirationTime * 1000);
     },
     signup({commit, dispatch}, authData) {
       //https://firebase.google.com/docs/reference/rest/auth#section-create-email-password
