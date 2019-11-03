@@ -104,7 +104,7 @@
           terms: this.terms
         }
         console.log('signup',formData);
-        this.$store.dispatch('signup', {email: formData.email, password: formData.password});
+        this.$store.dispatch('signup', formData);
       }
     }
   }
