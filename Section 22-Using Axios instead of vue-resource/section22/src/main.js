@@ -9,9 +9,26 @@ axios.defaults.headers.common['Authorization'] = 'asd token';
 axios.defaults.headers.get['Accepts'] = 'application/json';
 
 axios.interceptors.request.use(config => {
-  console.log(config);
+  console.log('axios.interceptors.request.use()', config);
   return config;
-})
+});
+axios.interceptors.response.use(res => {
+  console.log('axios.interceptors.response.use()', res);
+  return res;
+});
+
+
+// To remove the interceptors from execution
+// axios.interceptors.request.eject(reqInterceptor);
+// axios.interceptors.response.eject(resInterceptor);
+//     const reqInterceptor = axios.interceptors.request.use(config => {
+//       console.log('axios.interceptors.request.use()', config);
+//       return config;
+//     });
+//     const resInterceptor = axios.interceptors.response.use(res => {
+//       console.log('axios.interceptors.response.use()', res);
+//       return res;
+//     });
 
 new Vue({
   el: '#app',
