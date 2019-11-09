@@ -2,15 +2,17 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-new-quote></app-new-quote>
   </div>
 </template>
 
 <script>
 
+  import NewQuote from './components/new-quote';
 export default {
   name: 'app',
   components: {
-
+    'app-new-quote': NewQuote
   }
 }
 </script>
