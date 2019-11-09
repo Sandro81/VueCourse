@@ -3,21 +3,25 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <div class="container">
       <div class="row">
-        <app-new-quote></app-new-quote>
+        <router-link to="/">Quotes</router-link>
+        <router-link to="/new-quote">New Quote</router-link>
       </div>
     </div>
-
+    <hr>
+    <div class="container">
+      <div class="row">
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import NewQuote from './components/new-quote';
-  export default {
-    name: 'app',
-    components: {
-      'app-new-quote': NewQuote
-    }
+export default {
+  data() {
+    return {}
   }
+}
 </script>
 
 <style>

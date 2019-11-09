@@ -14,13 +14,7 @@
             </div>
         </form>
 
-        <form @submit.prevent="onGet">
-            <div class="form-group row">
-                <button class="btn btn-primary" type="submit">
-                    read
-                </button>
-            </div>
-        </form>
+
 
     </div>
 
@@ -53,26 +47,6 @@
                     );
             },
 
-            onGet() {
-
-                const instance = axios.create({
-                    baseURL: 'http://localhost/superenglishtest/public/api/quotes',
-                });
-
-                instance.get()
-                    .then(
-                        (response) => {
-                            console.log(response.data);
-                            console.log(response.status);
-                            console.log(response.statusText);
-                            console.log(response.headers);
-                            console.log(response.config);
-                        }
-                    )
-                    .catch(
-                        (error) => console.log(error)
-                    );
-            }
         }
     }
 </script>
