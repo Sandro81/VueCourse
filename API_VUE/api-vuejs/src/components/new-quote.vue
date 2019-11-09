@@ -24,7 +24,7 @@
         },
         methods: {
             onSubmitted() {
-                axios.post('http://localhost/superenglishtest/public/',
+                axios.post('http://localhost/superenglishtest/public/api/quote',
                     {content: this.quoteContent})
                     .then(
                         (response) => console.log(response)

@@ -2,7 +2,12 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <app-new-quote></app-new-quote>
+    <div class="container">
+      <div class="row">
+        <app-new-quote></app-new-quote>
+      </div>
+    </div>
+
   </div>
 </template>
 
