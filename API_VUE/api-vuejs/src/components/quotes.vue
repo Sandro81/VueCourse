@@ -1,12 +1,12 @@
 <template>
     <div>
-        <form @submit.prevent="onGet">
+        <form @submit.prevent="onGetQuotes">
             <div class="form-group row">
                 <button class="btn btn-primary" type="submit">Get Quotes</button>
             </div>
         </form>
         <hr>
-        <app-quote v-for="quote in quotes" v-bind:key="quotes.id" :qt="quote"></app-quote>
+        <app-quote v-for="quote in quotes" v-bind:key="quote.id" :qt="quote"></app-quote>
     </div>
 </template>
 
@@ -21,7 +21,21 @@
         },
         methods: {
             onGetQuotes() {
-                const instance = axios.create({
+
+                axios.get('http://localhost/superenglishtest/public/api/quotes')
+                    .then(
+                        (response) => {
+                            console.log(response.data);
+                            console.log(response.status);
+                            console.log(response.statusText);
+                            console.log(response.headers);
+                            console.log(response.config);
+                        }
+                    )
+                    .catch(
+                        (error) => console.log(error)
+                    );
+                /*const instance = axios.create({
                     baseURL: 'http://localhost/superenglishtest/public/api/quotes',
                 });
 
@@ -37,7 +51,7 @@
                     )
                     .catch(
                         (error) => console.log(error)
-                    );
+                    );*/
             }
         },
         components: {

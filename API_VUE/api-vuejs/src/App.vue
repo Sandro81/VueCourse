@@ -11,16 +11,21 @@
     <div class="container">
       <div class="row">
         <router-view></router-view>
+<!--        <app-new-quote></app-new-quote>-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  // import NewQuote from './components/new-quote';
 export default {
   data() {
     return {}
-  }
+  },
+  // components: {
+  //   'app-new-quote': NewQuote
+  // }
 }
 </script>
 

@@ -1,23 +1,24 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './App.vue'
 import Quotes from "@/components/quotes";
 import NewQuote from "@/components/new-quote";
 
-Vue.config.productionTip = false;
 Vue.use(VueRouter);
+Vue.config.productionTip = false;
+
 
 const routes = [
-  {path: '', components: Quotes},
-  {path: '/new-quote', components: NewQuote}
+  {path: '', component: Quotes},
+  {path: '/new-quote', component: NewQuote}
 ];
 
 const router = new VueRouter({
   mode: 'history',
-  routes: routes
+  routes
 })
 
 new Vue({
-  routes: routes,
   render: h => h(App),
-}).$mount('#app')
+  router
+}).$mount('#app');

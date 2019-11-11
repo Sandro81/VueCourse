@@ -30,7 +30,6 @@
         },
         methods: {
             onSubmitted() {
-
                 axios.post('http://localhost/superenglishtest/public/api/quote',
                     {content: this.quoteContent})
                     .then(
@@ -46,7 +45,6 @@
                         (error) => console.log(error)
                     );
             },
-
         }
     }
 </script>
