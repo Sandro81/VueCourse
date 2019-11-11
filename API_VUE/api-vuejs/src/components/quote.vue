@@ -5,7 +5,7 @@
                 {{qt.content}}
             </div>
             <div class="card-body" v-if="editing">
-                <input type="text">
+                <input type="text" v-model="editValue">
                 <a href="#" class="btn btn-primary" @click="onUpdate">Save</a>
                 <a href="#" class="btn btn-primary" @click="onCancel">Cancel</a>
             </div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         props: ['qt'],
         data() {
@@ -31,7 +32,31 @@
                 this.editing = true;
             },
             onCancel() {
+                console.log('editing -> ' + this.editing);
                 this.editing = false;
+            },
+            onUpdate() {
+                axios.put('http://localhost/superenglishtest/public/api/quote/'+this.qt.id, {content: this.editValue})
+                    .then(
+                        (response) => {
+                            console.log(response);
+
+                        }
+                    )
+                    .catch(
+                        (error) => console.log(error)
+                    );
+            },
+            onDelete() {
+                axios.delete('http://localhost/superenglishtest/public/api/quote/'+this.qt.id)
+                    .then(
+                        (response) => {
+                            console.log(response);
+                        }
+                    )
+                    .catch(
+                        (error) => console.log(error)
+                    );
             }
         }
     }
