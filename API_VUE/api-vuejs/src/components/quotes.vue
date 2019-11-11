@@ -30,6 +30,7 @@
                             console.log(response.statusText);
                             console.log(response.headers);
                             console.log(response.config);
+                            this.quotes = response.data.quotes;
                         }
                     )
                     .catch(

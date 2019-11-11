@@ -4,10 +4,12 @@
             <div class="card-header">
                 {{qt.content}}
             </div>
-            <div class="card-body">
+            <div class="card-body" v-if="editing">
                 <input type="text">
                 <a href="#" class="btn btn-primary" @click="onUpdate">Save</a>
                 <a href="#" class="btn btn-primary" @click="onCancel">Cancel</a>
+            </div>
+            <div v-if="!editing">
                 <a href="#" class="btn btn-primary" @click="onEdit">Edit</a>
                 <a href="#" class="btn btn-primary" @click="onDelete">Delete</a>
             </div>
@@ -17,7 +19,21 @@
 
 <script>
     export default {
-       props: ['qt']
+        props: ['qt'],
+        data() {
+            return {
+                editing: false,
+                editValue: this.qt.content
+            }
+        },
+        methods: {
+            onEdit() {
+                this.editing = true;
+            },
+            onCancel() {
+                this.editing = false;
+            }
+        }
     }
 </script>
 
