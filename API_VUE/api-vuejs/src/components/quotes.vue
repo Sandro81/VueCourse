@@ -6,7 +6,11 @@
             </div>
         </form>
         <hr>
-        <app-quote v-for="quote in quotes" v-bind:key="quote.id" :qt="quote"></app-quote>
+        <app-quote
+                v-for="quote in quotes"
+                v-bind:key="quote.id"
+                :qt="quote"
+        @quoteDeleted="onQuoteDeleted($event)"></app-quote>
     </div>
 </template>
 
@@ -53,6 +57,12 @@
                     .catch(
                         (error) => console.log(error)
                     );*/
+            },
+            onQuoteDeleted(id) {
+                const position = this.quotes.findIndex((element) => {
+                   return element.id == id;
+                });
+                this.quotes.splice(position, 1);
             }
         },
         components: {

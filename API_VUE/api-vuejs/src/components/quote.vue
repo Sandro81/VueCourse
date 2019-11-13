@@ -36,6 +36,8 @@
                 this.editing = false;
             },
             onUpdate() {
+                this.editing =false;
+                this.qt.content = this.editValue;
                 axios.put('http://localhost/superenglishtest/public/api/quote/'+this.qt.id, {content: this.editValue})
                     .then(
                         (response) => {
@@ -48,6 +50,7 @@
                     );
             },
             onDelete() {
+                this.$emit('quoteDeleted', this.qt.id);
                 axios.delete('http://localhost/superenglishtest/public/api/quote/'+this.qt.id)
                     .then(
                         (response) => {
