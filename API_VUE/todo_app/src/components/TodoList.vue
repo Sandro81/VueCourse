@@ -2,7 +2,11 @@
     <div>
         <input type="text" class="todo-input" placeholder="What needs to be done" v-model="newTodo" @keyup.enter="addTodo">
         <transition-group name="fade" enter-active-class="animated fadeInUp" leave-active-class="animated fadeOutDown">
-            <todo-item v-for="todo in todosFiltered" :key="todo.id" :todo="todo" :checkAll="!anyRemaining" @removedTodo="removeTodo" @finishedEdit="finishedEdit">
+            <todo-item v-for="todo in todosFiltered"
+                       :key="todo.id"
+                       :todo="todo"
+                       :checkAll="!anyRemaining"
+                       @removedTodo="removeTodo" @finishedEdit="finishedEdit">
             </todo-item>
         </transition-group>
 
