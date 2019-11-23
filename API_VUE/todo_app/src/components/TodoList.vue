@@ -7,26 +7,27 @@
         <transition-group name="fade"
                           enter-active-class="animated fadeInUp"
                           leave-active-class="animated fadeOutDown">
-            <div v-for="(todo, index) in todosFiltered" :key="todo.id" class="todo-item">
-                <div class="todo-item-left">
-                    <input type="checkbox" v-model="todo.completed">
-                    <div v-if="!todo.editing"
-                         class="todo-item-label"
-                         @dblclick="editTodo(todo)"
-                         :class="{ completed : todo.completed}">{{todo.title}}</div>
-                    <input v-else
-                           class="todo-item-edit"
-                           type="text"
-                           @blur="doneEdit(todo)"
-                           @keyup.enter="doneEdit(todo)"
-                           @keyup.esc="cancelEdit(todo)"
-                           v-model="todo.title"
-                           v-focus>
-                </div>
-                <div class="remove-item" @click="removeTodo(index)" >
-                    &times;
-                </div>
-            </div>
+            <todo-item v-for="(todo, index) in todosFiltered"
+                 :key="todo.id">
+<!--                <div class="todo-item-left">-->
+<!--                    <input type="checkbox" v-model="todo.completed">-->
+<!--                    <div v-if="!todo.editing"-->
+<!--                         class="todo-item-label"-->
+<!--                         @dblclick="editTodo(todo)"-->
+<!--                         :class="{ completed : todo.completed}">{{todo.title}}</div>-->
+<!--                    <input v-else-->
+<!--                           class="todo-item-edit"-->
+<!--                           type="text"-->
+<!--                           @blur="doneEdit(todo)"-->
+<!--                           @keyup.enter="doneEdit(todo)"-->
+<!--                           @keyup.esc="cancelEdit(todo)"-->
+<!--                           v-model="todo.title"-->
+<!--                           v-focus>-->
+<!--                </div>-->
+<!--                <div class="remove-item" @click="removeTodo(index)" >-->
+<!--                    &times;-->
+<!--                </div>-->
+            </todo-item>
         </transition-group>
         <div class="extra-container">
             <div><label><input type="checkbox"
@@ -56,8 +57,12 @@
 </template>
 
 <script>
+    import TodoItem  from "@/components/TodoItem";
     export default {
         name: "TodoList",
+        components: {
+          TodoItem,
+        },
         data() {
             return {
                 newTodo: '',
