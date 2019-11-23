@@ -8,7 +8,7 @@
                           enter-active-class="animated fadeInUp"
                           leave-active-class="animated fadeOutDown">
             <todo-item v-for="(todo, index) in todosFiltered"
-                 :key="todo.id">
+                 :key="todo.id" :todo="todo" :index="index">
 <!--                <div class="todo-item-left">-->
 <!--                    <input type="checkbox" v-model="todo.completed">-->
 <!--                    <div v-if="!todo.editing"-->
