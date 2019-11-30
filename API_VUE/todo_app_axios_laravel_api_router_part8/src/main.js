@@ -12,6 +12,8 @@ window.eventBus = new Vue();
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+
+//this is useful to avoid the # in the root
 const router = new VueRouter({
   routes,
   mode: 'history'
