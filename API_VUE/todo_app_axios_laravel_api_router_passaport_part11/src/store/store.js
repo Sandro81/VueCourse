@@ -84,13 +84,11 @@ export const store = new Vuex.Store({
             context.commit('clearTodos')
         },
         register(context, data) {
-            console.log(data);
             return new Promise((resolve, reject) => {
                 axios.post('/register', {
                     name: data.name,
                     email: data.email,
                     password: data.password,
-
                 })
                     .then(response => {
                         resolve(response)
