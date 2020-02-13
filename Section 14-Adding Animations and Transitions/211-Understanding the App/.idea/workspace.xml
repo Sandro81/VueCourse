@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="61e5489c-d842-4849-8f25-23e68ff70732" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../superenglishtest/src/main.js" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1Uekb8vBBcuaMFDUNJ579hTroOq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/section14_understanding_app" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="61e5489c-d842-4849-8f25-23e68ff70732" name="Default Changelist" comment="" />
+      <created>1575724516125</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575724516125</updated>
+      <workItem from="1575724517331" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
